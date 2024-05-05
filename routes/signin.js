@@ -1,6 +1,6 @@
 const express=require ("express");
 const router =express.Router();
-let users=[];
+let users = require('../usersData');
 
 router.use(express.urlencoded({ extended: true })); // para acceder al body
 router.use(express.json);
@@ -21,4 +21,4 @@ router.post('/', (req, res) => {
     res.status(201).json({ message: 'Usuario registrado exitosamente' });
 });
 
-module.exports ={router,users};
+module.exports =router;

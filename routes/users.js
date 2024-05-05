@@ -4,7 +4,7 @@ const router =express.Router();
 router.use(express.urlencoded({ extended: true })); // para acceder al body
 router.use(express.json);
 
-let users= require("./signin").users;
+let users = require('../usersData');
 
 router.get('/', (req, res) => {
     res.send(users);
