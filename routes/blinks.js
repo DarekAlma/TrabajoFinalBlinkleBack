@@ -1,10 +1,11 @@
-app.use(express.urlencoded({ extended: true })); // para acceder al body
-app.use(express.json);
 const express=require ("express");
 const router =express.Router();
 const { v4: uuidv4 } = require('uuid');
 
-const users= require("../index").users;
+router.use(express.urlencoded({ extended: true })); // para acceder al body
+router.use(express.json);
+
+let users= require("./signin").users;
 
 // Ruta para publicar un tweet
 router.post('/', (req, res) => {

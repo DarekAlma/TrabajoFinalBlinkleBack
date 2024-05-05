@@ -1,10 +1,10 @@
-app.use(express.urlencoded({ extended: true })); // para acceder al body
-app.use(express.json);
-
-const users= require("../index").users;
-
 const express=require ("express");
 const router =express.Router();
+
+router.use(express.urlencoded({ extended: true })); // para acceder al body
+router.use(express.json);
+
+let users= require("./signin").users;
 
 router.get('/', (req, res) => {
     res.send(users);
@@ -21,3 +21,4 @@ router.get('/:userId', (req, res) => {
 });
 
 module.exports = router;
+

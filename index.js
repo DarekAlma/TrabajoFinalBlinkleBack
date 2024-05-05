@@ -3,7 +3,6 @@ const express = require('express');
 const app= express();
 const PORT=8080;
 
-let users = [];
 
 app.use(express.urlencoded({ extended: true })); // para acceder al body
 app.use(express.json);

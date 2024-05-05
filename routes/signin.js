@@ -1,10 +1,10 @@
-app.use(express.urlencoded({ extended: true })); // para acceder al body
-app.use(express.json);
-
-const users= require("../index").users;
-
 const express=require ("express");
 const router =express.Router();
+let users=[];
+
+router.use(express.urlencoded({ extended: true })); // para acceder al body
+router.use(express.json);
+
 
 
 // Ruta para registrar un nuevo usuario
@@ -21,4 +21,4 @@ router.post('/', (req, res) => {
     res.status(201).json({ message: 'Usuario registrado exitosamente' });
 });
 
-module.exports = router;
+module.exports ={router,users};

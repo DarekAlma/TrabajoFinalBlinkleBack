@@ -1,11 +1,13 @@
-app.use(express.urlencoded({ extended: true })); // para acceder al body
-app.use(express.json);
-
-const users= require("../index").users;
 
 const express=require ("express");
 
 const router =express.Router();
+
+router.use(express.urlencoded({ extended: true })); // para acceder al body
+router.use(express.json);
+
+let users= require("./signin").users;
+
 
 // Ruta para iniciar sesión
 router.post('/', (req, res) => {
